@@ -9,14 +9,25 @@
    {% endif %}
    
    <form action="" method="POST">{% csrf_token %} 
-    <p>BUSQUEDA DE CAMADAS</p>
+    <p><font color="white">INGRESE EL NOMBRE DE CURSO Y NUMERO DE CAMADA A GRABAR</font></p>
        <table>
            {{ miFormulario.as_table }}
        </table>   
        
 
-       <input type="submit" ,input value="Enviar">
+       <input type="submit" , value="Enviar">
 
    </form>
+   <h2><center><font color="white">Nuestros Cursos<center></h2>
+
+    <h3><font color="white">Ingeniería en Programación</h3>
+    <h3><font color="white">Python</h3>
+    <h3><font color="white">Data science</h3>
+    <h3><font color="white">Full stack</h3>
+    <h3><font color="white">Diseño UX/UI</h3>
+
+
+
+
 
 {% endblock %}

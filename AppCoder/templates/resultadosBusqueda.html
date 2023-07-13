@@ -8,14 +8,15 @@
     <p style="color: red;">Estan mal los datos , revisar.</p>
     {% endif %}
     
-    <p> Estamnos buscando el : {{camada}}</p>
+    <p style="color: white;"> Estamnos buscando el número de camada : {{camada}}</p>
     
-    {% if curso %}
+    {% if cursos %}
         <ul>
-            {% for cur in curso %}
+            {% for curso in cursos %}
                 <li> {{curso.nombre}}</li>
                 <li> {{curso.camada}}</li>
             {% endfor %}
         </ul>
     {% endif %}
+
 {% endblock %}

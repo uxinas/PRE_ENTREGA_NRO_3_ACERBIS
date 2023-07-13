@@ -26,7 +26,7 @@ def entregables(request):
     return render (request,'entregables.html')
 
 
-def cursos(request):
+def cursos(request): 
 
     if request.method == "POST":
         miFormulario = CursoFormulario(request.POST) #donde llega la info del html
@@ -68,8 +68,10 @@ def buscar (request):
     if request.GET['camada']:
         camada = request.GET['camada']
         cursos = Curso.objects.filter(camada__icontains=camada)
-        return render (request, 'resultadosBusqueda.html', {'cursos': cursos, 'camada': camada})
+        #return render (request, 'resultadosBusqueda.html', {'cursos': cursos, 'camada': camada})
+        return render (request, 'inicio.html', {'cursos': cursos, 'camada': camada})
     else:
         respuesta = "no enviaste datos"
 
-    return HttpResponse (respuesta)
+    #return HttpResponse (respuesta)
+    return render (request, 'inicio.html', {'respuesta' : respuesta})

@@ -3,9 +3,42 @@
 {% load static %}
 
 {% block contenidoQueCambia %}
-   <!-- En este lugar va lo que cambia y se asocia a la vista-->
-   <h1>Este es el titulo del inicio </h1>
-   <p>Se ha heredado todo desde la plantilla padre</p>
 
-   <h3>En el hijo, inicio.html, donde casi no hay nada :)</h3>
+   {% if cursos %}
+         <p style="color: white;">Estamos buscando el número de camada: {{camada}}</p>
+         </ul>
+               {% for curso in cursos %}
+                  <li> {{curso.nombre}}</li>
+                  <li> {{curso.camada}}</li>
+               {% endfor %}
+         </ul>
+         {% else %}
+         <p>No hay datos con esa descripción.</p>
+
+   {% endif %}
+
+      <p style="color: red;">{{respuesta}}</p>
+
+   <!-- En este lugar va lo que cambia y se asocia a la vista-->
+   <h2><center><font color="white">Somos Compu Science<center></h2>
+
+   <p><center>Somos una Universidad nacida y diseñada en la Era Digital para la Era Digital. Una organización con desarrollo exponencial. Con la misión transformadora de crear una universidad de élite para todos. Con la visión de cambiar la educación superior en nuestra área idiomática. Con un equipo humano especialista en la educación en línea, que arrastra una experiencia de mucho éxito que acompaña con verdadera vocación docente. Y con los medios económicos y técnicos que nos permite constituirnos en una organización exponencial.
+
+      Ofreceremos el mayor número de titulaciones propias y con acreditación de posgrado y de grado en línea. En total, más de 10,000 programas universitarios.
+      
+      
+      En el mundo de la hiperconectividad, 
+      concebir la vida sin softwares que faciliten las comunicaciones, 
+      la ciencia e incluso las labores diarias parece casi imposible.<br> <br>  Así, 
+      mientras estas tecnologías avanzan, el mercado precisa nuevos profesionales 
+      que sean capaces de cubrir de forma efectiva la alta demanda de creación, desarrollo 
+      y mantenimiento de nuevos softwares. <br> <br> Esta carrera universitaria aporta al alumno la 
+      capacidad de insertarse en un mercado laboral altamente demandado, contado con conocimientos 
+      que le permitan intervenir con eficiencia en todo el Ciclo de Vida del programa, 
+      desde la concepción hasta la implementación del proyecto.<br> <br>  Una oportunidad única para entender
+       los fundamentos matemáticos, científicos y tecnológicos que permiten la máxima optimización 
+       de las TICs y desarrollo software mediante la administración de recursos humanos e informáticos
+        para satisfacer las necesidades de los sectores económicos.</font></center></p>
+
+   <h3></h3>
 {% endblock %}
