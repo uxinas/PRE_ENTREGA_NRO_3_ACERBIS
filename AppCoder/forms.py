@@ -10,3 +10,11 @@ class ProfesorFormulario (forms.Form):
     apellido = forms.CharField()
     email = forms.EmailField()
     profesion = forms.CharField()
+
+class EstudiantesFormulario(forms.Form):
+    nombre = forms.CharField ()
+    apellido = forms.CharField ()   
+
+class EntregableFormulario(forms.Form):
+    nombre = forms.CharField ()
+    apellido = forms.CharField ()     

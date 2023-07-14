@@ -11,6 +11,11 @@ urlpatterns = [
     path('profesorFormulario', views.profesorFormulario, name='ProfesorFormulario'),
     path('busquedaCamada', views.busquedaCamada, name='BusquedaCamada'),
     path('buscar/', views.buscar),
+    path('estudiantesFormulario', views.estudiantesFormulario, name='EstudiantesFormulario'),
+    path('buscarProfesores/', views.buscarProfesores, name='buscarProfesores'),
+    path('busquedaProfesores/', views.busquedaProfesores, name='busquedaProfesores'),
+    path('entregables/', views.entregable, name='entregable'),
+
 
 
 

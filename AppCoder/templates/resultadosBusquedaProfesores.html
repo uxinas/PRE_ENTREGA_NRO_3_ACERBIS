@@ -1,0 +1,22 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    {% if miFormulario.errors %}
+    <p style="color: red;">Estan mal los datos , revisar.</p>
+    {% endif %}
+    
+    <p style="color: white;"> Estamnos buscando el profesor : {{nombre}}</p>
+    
+    {% if cursos %}
+        <ul>
+            {% for curso in cursos %}
+                <li> {{curso.nombre}}</li>
+                <li> {{curso.camada}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}

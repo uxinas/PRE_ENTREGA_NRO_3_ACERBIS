@@ -1,7 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from AppCoder.models import Curso, Profesor
-from AppCoder.forms import CursoFormulario, ProfesorFormulario
+from AppCoder.models import Curso, Profesor,Entregable,Estudiante
+from AppCoder.forms import CursoFormulario, ProfesorFormulario , EstudiantesFormulario, EntregableFormulario
+
 # Create your views here.
 
 def curso(self):
@@ -61,6 +62,8 @@ def profesorFormulario(request):
         miFormulario = ProfesorFormulario()
     return render(request, 'profesorFormulario.html', {'miFormulario':miFormulario})
 
+
+
 def busquedaCamada(request):
     return render(request, 'busquedaCamada.html')
 
@@ -75,3 +78,52 @@ def buscar (request):
 
     #return HttpResponse (respuesta)
     return render (request, 'inicio.html', {'respuesta' : respuesta})
+
+
+
+def busquedaProfesores(request):
+    return render(request, 'busquedaProfesores.html')
+
+
+
+def buscarProfesores (request):
+    if request.GET['profesor']:
+        nombre = request.GET['nombre']
+        apellido = Curso.objects.filter(apellido__icontains=apellido)
+        return render (request, 'profesorFormulario.html', {'nombre': nombre, 'apellido': apellido})
+    else:
+        respuesta = "no enviaste datos"
+
+    return render (request, 'profesorFormulario.html', {'respuesta' : respuesta})
+
+
+        
+def estudiantesFormulario(request):
+    if request.method == "POST":
+        miFormulario = EstudiantesFormulario(request.POST) 
+        print(miFormulario)
+
+        if miFormulario.is_valid:
+            informacion = miFormulario.cleaned_data
+            estudiante = Estudiante(nombre=informacion['nombre'], 
+                                    apellido=informacion['apellido'],)
+            estudiante.save()
+            return render(request, 'inicio.html')
+    else:
+        miFormulario = EstudiantesFormulario()
+        return render(request, 'estudiantesFormulario.html', {'miFormulario':miFormulario})
+
+def entregable(request):
+    if request.method == "POST":
+        miFormulario = (request.POST) 
+        print(miFormulario)
+
+        if miFormulario.is_valid:
+            informacion = miFormulario.cleaned_data
+            entregable = Entregable(nombre=informacion['nombre'], 
+                                    apellido=informacion['apellido'],)
+            entregable.save()
+            return render(request, 'inicio.html')
+    else:
+        miFormulario = EntregableFormulario()
+        return render(request, 'entregableFormulario.html', {'miFormulario':miFormulario})        

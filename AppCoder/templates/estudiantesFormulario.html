@@ -3,10 +3,10 @@
 {% load static %}
 
 {% block contenidoQueCambia %}
-    <title>Agregar Profesor</title>
+    <title>Agregar Estudiantes</title>
 </head>
 <body>
-    <h3><p style="color:white"> Ingreso de Profesores</p></h3>
+    <h3><p style="color:white"> Ingreso de Estudiantes</p></h3>
     {% if miFormulario.errors %}
     <p style="color:red;">Estan mal los datos, revisar</p>
     {% endif %}
@@ -20,12 +20,10 @@
 
         <input type="submit" value="Enviar">
     </form>
-
+    
     {% if miFormulario.errors %}
     <p style="color: red;">Estan mal los datos , revisar.</p>
     {% endif %}
-    
-    
 </body>
 </html>
 {% endblock %}

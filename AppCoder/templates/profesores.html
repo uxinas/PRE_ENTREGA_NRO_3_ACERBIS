@@ -6,5 +6,19 @@
    <!-- En este lugar va lo que cambia y se asocia a la vista-->
    <h1>Profesores</h1>
    <p>Acá va la info de Profesores</p>
+   
+   {% if miFormulario.errors %}
+   <p style="color:red;">Estan mal los datos, revisar</p>
+   {% endif %}
 
+   <form action=""method="POST">{% csrf_token %}
+       <!--aca van los elementos de django-->
+
+       <table>
+           {{ miFormulario.as_table }}
+       </table>
+
+       <input type="submit" value="Enviar">
+   </form>
+   
 {% endblock %}

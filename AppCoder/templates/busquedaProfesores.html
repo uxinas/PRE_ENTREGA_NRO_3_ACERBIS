@@ -7,10 +7,9 @@
     {% if miFormulario.errors %}
     <p style="color: red;">Estan mal los datos , revisar.</p>
     {% endif %}
-    <h3><p style="color:white"> Busqueda por número de camada</p></h3>
 
-    <form action="/AppCoder/buscar/" method="GET">
-        <input type="number" name="camada" id="camada">
+    <form action="/AppCoder/buscarProfesores" method="GET">
+        <input type="number" name="Nombre" id="apellido">
         <input type="submit" value="Buscar">
     </form>
 {% endblock %}
